@@ -135,9 +135,8 @@ func GetUrl(messageParts []string) string {
 
 func Trimmer(file string, borders []string) error {
 	if len(borders) == 2 {
-		err := ffmpeg_go.Input(file, ffmpeg_go.KwArgs{
-			"ss": borders[0],
-		}).Output(file+".ogg", ffmpeg_go.KwArgs{
+		err := ffmpeg_go.Input(file).Output(file+".ogg", ffmpeg_go.KwArgs{
+			"ss":       borders[0],
 			"to":       borders[1],
 			"loglevel": "quiet",
 		}).OverWriteOutput().ErrorToStdOut().Silent(true).Run()
