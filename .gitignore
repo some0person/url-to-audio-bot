@@ -1,0 +1,7 @@
+# Ignore binaries without extension
+*
+!*.*
+!*/
+
+# Ignore sensitive information
+.env_secret
